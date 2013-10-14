@@ -710,6 +710,7 @@ $.extend(CalendarsPicker.prototype, {
 			}
 			if (!inst.inline && !keyUp) {
 				$(target).val(value);
+				$(target).valid(); //fix to notify jquery validation that the value changed. 
 			}
 			$(inst.options.altField).val(altValue);
 			if ($.isFunction(inst.options.onSelect) && !keyUp && !inst.inSelect) {
