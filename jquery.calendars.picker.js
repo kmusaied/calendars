@@ -1256,8 +1256,8 @@ $.extend(CalendarsPicker.prototype, {
 		for (var name in inst.options.commands) {
 			addCommand('button', 'button type="button"', 'button', name,
 				inst.options.renderer.commandButtonClass);
-			addCommand('link', 'a href="javascript:void(0)"', 'a', name,
-				inst.options.renderer.commandLinkClass);
+			addCommand('link', 'a href="javascript:void(0)" onclick="return false;"', 'a', name,
+				inst.options.renderer.commandLinkClass); //fix IE issue with window.onbeforeunload
 		}
 		picker = $(picker);
 		if (monthsToShow[1] > 1) {
